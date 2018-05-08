@@ -1,0 +1,56 @@
+.blog-preview {
+  width: 400px;
+  border: 1px solid black;
+  margin-bottom: 10px;
+  padding: 25px;
+}
+
+#app, #map {
+  height: 250px;
+  width: 250px;
+}
+
+.nav {
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  color: #d0021b;
+}
+
+.active {
+  font-weight: bold;
+}
+
+.nav li {
+  margin-right: 15px;
+  list-style: none;
+}
+
+.button {
+  border: 1px solid lightgray;
+  background-color: darkgray;
+  padding: 5px;
+  border-radius:2px;
+}
+
+/* Blog Post */
+
+.blog-post {
+  text-align: center;
+}
+
+.blog-post-h1, .blog-post-p {
+  padding-bottom: 30px;
+}
+
+.comment-container {
+  float: left;
+}
+
+/*Comments */
+.comment-value {
+  font-height: 12px;
+  line-height: 2em;
+}
