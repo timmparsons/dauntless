@@ -4,21 +4,30 @@ export class Author extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      author: []
-    }
+      persons: []
+    };
+  }
+
+  componentDidMount() {
+    axios.get(`https://jsonplaceholder.typicode.com/users`).then(res => {
+      const persons = res.data.map(person => {
+        return <div key={person.results}>{person.name}</div>;
+      });
+      this.setState({ persons });
+      console.log("state", this.state.persons);
+    });
   }
 
   render() {
     return (
       <div id="app">
-        <div id="map">
-        </div>
-        <p>Name: {this.props.users.name}</p>
-        <p>Location</p>
+        <div id="map">{this.state.persons}</div>
       </div>
-    )
+    );
   }
 }
+
+
 // export const Author = (props) => {
 //   const componentDidMount = () => {
 //     let map = new window.google.maps.Map(document.getElementById("map"), {

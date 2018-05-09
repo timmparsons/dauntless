@@ -54,3 +54,8 @@ a {
   font-height: 12px;
   line-height: 2em;
 }
+
+/*Author */
+#app {
+  margin: auto;
+}

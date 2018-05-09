@@ -7,12 +7,16 @@ export class NewBlogPost extends React.Component {
     this.handleNewPost = this.handleNewPost.bind(this);
   }
 
+  handleNewPost (e) {
+    e.preventDefault();
+  }
+
   render() {
     return (
       <div>
         <form onSubmit={this.props.handleNewPost}>
-          <input />
-          <input />
+          <input type="text" name="header"/>
+          <input type="content" name="body"/>
           <button>Add New Post</button>
         </form>
       </div>
