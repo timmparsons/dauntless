@@ -1,18 +1,25 @@
 import React from "react";
 import { BlogPreview } from "./BlogPreview";
+import { NewBlogPost } from "./NewBlogPost";
 import axios from "axios";
 
 export class ViewPreview extends React.Component {
   constructor(props) {
     super(props);
+    this.handleAddPost = this.handleAddPost.bind(this);
     this.state = {
       posts: []
     };
   }
 
-  handeNewPost() {
-    alert("Add new post");
+  handleAddPost(post) {
+    this.setState(prevState => {
+      return {
+        posts: [post].concat(prevState.posts)
+      };
+    });
   }
+  
 
   componentDidMount() {
     // let self = this;
