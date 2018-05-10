@@ -1,9 +1,8 @@
-import React from 'react';
-import  { NavLink } from 'react-router-dom';
-
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 export const Nav = () => {
-  return(
+  return (
     <ul className="nav">
       <li>
         <NavLink exact activeClassName="active" to="/">
@@ -14,7 +13,7 @@ export const Nav = () => {
         <NavLink activeClassName="active" to="/newblogpost">
           New Blog Post
         </NavLink>
-      </li>      
+      </li>
     </ul>
-  )
+  );
 };

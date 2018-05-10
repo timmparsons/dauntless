@@ -1,8 +1,7 @@
-import React from 'react';
-import {Comments} from './Comments';
-import {Link} from 'react-router-dom';
-import axios from 'axios';
-//Pass down user data to Author to get latitude and longitude
+import React from "react";
+import { Comments } from "./Comments";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 export class BlogPost extends React.Component {
   constructor(props) {
@@ -19,7 +18,7 @@ export class BlogPost extends React.Component {
           this.props.match.params.postId
         }`
       )
-      .then(res => this.setState({ userId: res.data.userId }));
+      .then(res => this.setState({ posts: res.data, userId: res.data.userId }));
   }
   render() {
     const { userId } = this.state;
@@ -40,6 +39,7 @@ export class BlogPost extends React.Component {
     );
   }
 }
+
 
 
 

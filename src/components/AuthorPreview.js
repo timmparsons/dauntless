@@ -1,16 +1,4 @@
-import React from 'react';
-import axios from 'axios';
-import {Author} from './Author';
 
-export class AuthorPreview extends React.Component {
-  render() {
-    return (
-      <div>
-        <h1>Some data</h1>
-      </div>
-    );
-  }
-}
 
 
     //   <div className="blog-post">

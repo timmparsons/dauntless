@@ -1,4 +1,6 @@
-import React from 'react';
+import React from "react";
+import axios from "axios";
+import GoogleMap from "./GoogleMap";
 
 export class Author extends React.Component {
   constructor(props) {
@@ -9,36 +11,36 @@ export class Author extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`https://jsonplaceholder.typicode.com/users`).then(res => {
-      const persons = res.data.map(person => {
-        return <div key={person.results}>{person.name}</div>;
-      });
-      this.setState({ persons });
-      console.log("state", this.state.persons);
-    });
+    axios
+      .get(
+        `https://jsonplaceholder.typicode.com/users/${
+          this.props.match.params.authorId
+        }`
+      )
+      .then(res => this.setState({ persons: res.data }));
   }
 
   render() {
     return (
-      <div id="app">
-        <div id="map">{this.state.persons}</div>
+      <div>
+        <h1>Author Name: {this.state.persons.name}</h1>
+        <p>
+          Author Location:
+          {this.state.persons.address && this.state.persons.address.city
+            ? this.state.persons.address.city
+            : "something went wrong"}
+        </p>
+        <GoogleMap
+          center={
+            this.state.persons.address && this.state.persons.address.geo.lat
+              ? {
+                  lat: this.state.persons.address.geo.lat,
+                  lng: this.state.persons.address.geo.lng
+                }
+              : undefined
+          }
+        />
       </div>
     );
   }
 }
-
-
-// export const Author = (props) => {
-//   const componentDidMount = () => {
-//     let map = new window.google.maps.Map(document.getElementById("map"), {
-//       center: {lat: -34.397, lng: 150.644},
-//       zoom: 8,
-//       mapTypeId: 'roadmap',
-//       });
-//     }
-  
-//   )
-
-// To Do:
-// User long and latitide passed into Author
-// {user.name} and {user.location} passed down from BlogPost

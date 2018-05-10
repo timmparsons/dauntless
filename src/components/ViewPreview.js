@@ -1,6 +1,6 @@
-import React from 'react';
-import {BlogPreview} from './BlogPreview';
-import axios from 'axios';
+import React from "react";
+import { BlogPreview } from "./BlogPreview";
+import axios from "axios";
 
 export class ViewPreview extends React.Component {
   constructor(props) {
@@ -16,24 +16,24 @@ export class ViewPreview extends React.Component {
 
   componentDidMount() {
     // let self = this;
-    axios.get(`https://jsonplaceholder.typicode.com/posts`)
-    .then(res => {
+    axios.get(`https://jsonplaceholder.typicode.com/posts`).then(res => {
       const posts = res.data;
       this.setState({ posts: posts });
-    })
+    });
   }
 
   render() {
     return (
       <div>
-        { this.state.posts.map(posts => 
-          <BlogPreview 
-            id={posts.id} 
+        {this.state.posts.map(posts => (
+          <BlogPreview
+            id={posts.id}
             key={posts.id}
             title={posts.title}
-            body={posts.body} />
-        )}
+            body={posts.body}
+          />
+        ))}
       </div>
-    )
+    );
   }
 }
