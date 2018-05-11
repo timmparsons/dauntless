@@ -1,6 +1,5 @@
 import React from "react";
 import { BlogPreview } from "./BlogPreview";
-import { NewBlogPost } from "./NewBlogPost";
 import axios from "axios";
 
 export class ViewPreview extends React.Component {
@@ -19,7 +18,6 @@ export class ViewPreview extends React.Component {
       };
     });
   }
-  
 
   componentDidMount() {
     // let self = this;
