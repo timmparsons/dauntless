@@ -11,7 +11,7 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <div className="container">
+        <div className="container-fluid">
           <Nav />
           <Route exact path="/" component={ViewPreview} />
           <Route exact path="/posts/:postId" component={BlogPost} />

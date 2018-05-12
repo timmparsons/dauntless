@@ -37,7 +37,7 @@ class CommentList extends React.Component {
   render() {
     return (
       <div>
-        <h3>Comments:</h3>
+        <h3 className="comments-h3">Comments:</h3>
         {this.props.comments.map(comment => (
           <Comment key={comment} commentText={comment} />
         ))}
@@ -68,7 +68,7 @@ class AddComment extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="comments-input">
         <form onSubmit={this.handleAddComment}>
           <input type="text" name="comment" />
           <button>Add Comment</button>

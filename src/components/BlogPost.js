@@ -25,16 +25,20 @@ export class BlogPost extends React.Component {
     console.log(userId);
 
     return (
-      <div className="blog-post">
-        <img src="https://picsum.photos/300/300" alt="#" />
-        <h1 className="blog-post-h1">{this.state.posts.title}</h1>
-        <p className="blog-post-p">{this.state.posts.body}</p>
-        {userId && (
-          <Link to={`/authors/${userId}`} className="button">
-            Authors Profile
-          </Link>
-        )}
-        <Comments />
+      <div>
+        <div className="blog-post">
+          <img src="https://picsum.photos/300/300" alt="#" />
+          <h1 className="blog-post-h1">{this.state.posts.title}</h1>
+          <p className="blog-post-p">{this.state.posts.body}</p>
+          {userId && (
+            <Link to={`/authors/${userId}`} className="button">
+              Authors Profile
+            </Link>
+          )}
+          </div>
+          <div className="comments-section">
+            <Comments />
+          </div>        
       </div>
     );
   }

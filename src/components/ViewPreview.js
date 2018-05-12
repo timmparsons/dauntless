@@ -29,7 +29,7 @@ export class ViewPreview extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="flex-container">
         {this.state.posts.map(posts => (
           <BlogPreview
             id={posts.id}

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const BlogPreview = props => {
   return (
-    <div className="blog-preview">
+    <div className="blog-preview blog-container">
       <img src="https://picsum.photos/40/40" alt="#" />
       <h1>{props.title.substring(0, 15)}</h1>
       <p>{props.body.substring(0, 27) + "..."}</p>
